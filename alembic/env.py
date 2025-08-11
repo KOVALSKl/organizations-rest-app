@@ -34,13 +34,14 @@ target_metadata = Base.metadata
 DB_USER = os.getenv("POSTGRES_USER")
 DB_PASS = os.getenv("POSTGRES_PASSWORD")
 DB_NAME = os.getenv("POSTGRES_DB")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
 
 sqlalchemy_url = URL.create(
     drivername="postgresql+psycopg2",
     username=DB_USER,
     password=DB_PASS,
-    host="localhost",
-    port=32700,
+    host=DB_HOST,
     database=DB_NAME,
 )
 
